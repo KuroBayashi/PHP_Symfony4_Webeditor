@@ -1,0 +1,31 @@
+{#
+ #  Category - Macro Tree
+ #}
+
+{% macro categoryTree(category) %}
+    {% import _self as ct %}
+
+    {% if category.articles|length %}
+        <ul class="list">
+            {% for article in category.articles %}
+                <li class="list__item--stylized-hyphen">
+                    <a href="{{ path("article_show", {"id": article.id}) }}" class="link">
+                        {{ article.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% for sousCategory in category.subCategories %}
+        <h4>
+            <a href="{{ path("category_show", {"id": sousCategory.id}) }}" class="link link--no-color">
+                {{ sousCategory.title }}
+            </a>
+        </h4>
+
+        <div class="list--indented">
+            {{ ct.categoryTree(sousCategory) }}
+        </div>
+    {% endfor %}
+{% endmacro %}

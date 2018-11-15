@@ -1,0 +1,60 @@
+/**
+ *  Elements - _Buttons
+ */
+$size: 40px;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+
+  height: $size;
+
+  border: none;
+
+  color: $color-contrast;
+
+  background: $color-interactive;
+
+  cursor: pointer;
+  @include box_shadow(1);
+
+  &:hover {
+    @include box_shadow(2);
+  }
+
+  & + & {
+    margin-left: $space--m;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--danger {
+    background: $color-status--danger;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $size;
+    height: 80%;
+
+    padding: $space--xs;
+  }
+
+  &__text {
+    padding: 0 $space--m;
+
+    font-weight: 700;
+  }
+
+  &:not(&--reverse) &__icon + &__text {
+    border-left: 1px solid $color-contrast;
+  }
+  &--reverse &__icon + &__text {
+    border-right: 1px solid $color-contrast;
+  }
+}

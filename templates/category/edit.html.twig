@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category - Edition{% endblock %}
+
+{% block site_title %}{{ category.title }}{% endblock %}
+
+{% block body %}
+    <h2>Edition de la catégorie</h2>
+
+    {{ include('category/_form.html.twig') }}
+
+    {% if not category.articles|length and not category.subCategories|length %}
+        <h2>Suppression de la catégorie</h2>
+
+        {{ include('category/_delete_form.html.twig') }}
+    {% endif %}
+{% endblock %}

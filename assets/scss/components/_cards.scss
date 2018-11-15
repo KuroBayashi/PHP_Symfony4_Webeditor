@@ -1,0 +1,43 @@
+/**
+ *  Components - _Cards
+ */
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid $color-contrast--low;
+
+  background: $color-contrast;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100px;
+
+    padding: $space--s $space--m;
+
+    color: $color-contrast;
+    text-align: center;
+
+    background: $color-brand--2;
+  }
+
+  &__content {
+    flex-grow: 2;
+
+    padding: $space--s;
+  }
+
+  &__footer {
+    min-height: 40px;
+
+    padding: $space--s $space--m;
+
+    color: $color-contrast;
+
+    background: $color-brand--2;
+  }
+}

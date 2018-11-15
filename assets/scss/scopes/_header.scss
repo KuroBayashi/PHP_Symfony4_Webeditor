@@ -1,0 +1,21 @@
+/**
+ *  Scopes - _Header
+ */
+
+.s-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: center;
+
+  margin-bottom: $space--m;
+
+  background: $color-brand--2;
+
+  @include box_shadow(1);
+
+  &__title {
+    color: $color-contrast;
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+{#
+ #  Main Header
+ #}
+
+<header class="s-header">
+    {% include 'partials/_toolbox.html.twig' %}
+
+    <h1 class="s-header__title">
+        {% block site_title %}
+            {{ site_name }}
+        {% endblock %}
+    </h1>
+</header>

@@ -1,0 +1,20 @@
+/**
+ *  Article - _Show
+ */
+
+.p-article-show {
+
+  &__buttons {
+    position: absolute;
+    right: 5%;
+
+    margin-top: $space--s;
+
+    text-align: right;
+  }
+
+  &__pdf-viewer {
+    width: 100%;
+    height: 900px
+  }
+}

@@ -1,0 +1,41 @@
+/**
+ *  Components - _Flashes
+ */
+
+$size: 50px;
+
+.c-flash {
+  display: flex;
+  align-items: center;
+
+  min-height: $size;
+
+  color: $color-contrast;
+
+  & + & {
+    margin-top: $space--xs;
+  }
+
+  &--danger {
+    background: $color-status--danger;
+  }
+
+  &--success {
+    background: $color-status--success;
+  }
+
+  &--alert {
+    background: $color-status--alert;
+  }
+  &--info {
+    background: $color-status--info;
+  }
+
+  &__icon {
+    width: $size;
+
+    margin-right: $space--s;
+
+    text-align: center;
+  }
+}

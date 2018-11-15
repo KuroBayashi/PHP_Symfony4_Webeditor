@@ -1,0 +1,31 @@
+{#
+ #  Category - _Form
+ #}
+
+{{ form_start(form, {'attr': {'class': 'form'}}) }}
+
+    <div class="form__row">
+        {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'form__label'}}) }}
+        <div class="form__errors">
+            {{ form_errors(form.title) }}
+        </div>
+        {{ form_widget(form.title, {'attr': {'class': 'form__field'}}) }}
+    </div>
+
+    <div class="form__row">
+        {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form__label'}}) }}
+        {{ form_widget(form.description, {'attr': {'class': 'form__field form__field--textarea'}}) }}
+    </div>
+
+    <div class="form__row">
+        {{ form_label(form.parent, 'Catégorie', {'label_attr': {'class': 'form__label'}}) }}
+        {{ form_widget(form.parent, {'attr': {'class': 'form__field'}}) }}
+    </div>
+
+    <button class="btn">
+        <span class="btn__text">
+            {{ button_label|default('Sauvegarder') }}
+        </span>
+    </button>
+
+{{ form_end(form) }}

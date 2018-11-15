@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category - Show{% endblock %}
+
+{% block site_title %}{{ category.title|default(parent()) }}{% endblock %}
+
+{% block body %}
+    {% if description is defined %}
+        <section class="p-category-show__description">
+            {{ description }}
+        </section>
+    {% endif %}
+
+    <div class="p-category-show__buttons">
+        {% set buttons = [
+            {
+                'link': path('category_new', {'id': id}),
+                'text': "Ajouter une catégorie",
+                'icon': 'layer-group'
+            },
+            {
+                'link': path('article_new', {'id': id}),
+                'text': "Ajouter un article",
+                'icon': 'pen-nib'
+            },
+        ] %}
+
+        {% if id %}
+            {% set buttons = [{
+                'link': path('category_edit', {'id': id}),
+                'text': "Editer cette catégorie",
+                'icon': 'pen'
+            }]|merge(buttons) %}
+        {% endif %}
+
+        {% for button in buttons %}
+            <a href="{{ button.link }}" class="link--no-decoration btn">
+                <i class="fa fa-{{ button.icon }} btn__icon"></i>
+                <span class="btn__text">{{ button.text }}</span>
+            </a>
+        {% endfor %}
+    </div>
+
+    <section>
+        <h2>Articles</h2>
+
+        {% if articles|length %}
+            <ul class="list ">
+                {% for article in articles %}
+                    <li class="list__item--stylized-hyphen">
+                        <a href="{{ path('article_show', {'id': article.id}) }}" class="link">
+                            {{ article.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            Aucun article.
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Categories</h2>
+
+        {% if categories|length %}
+            <div class="p-category-show__container">
+                {% for category in categories %}
+                    {% include 'category/_category.html.twig' %}
+                {% endfor %}
+            </div>
+        {% else %}
+            Aucune catégorie.
+        {% endif %}
+    </section>
+{% endblock %}

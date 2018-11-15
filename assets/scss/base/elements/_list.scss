@@ -1,0 +1,36 @@
+/**
+ *  Base - List
+ */
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  &--indented {
+    margin-left: $space--m;
+  }
+
+  &--horizontal {
+    flex-direction: row;
+
+    .list__item + .list__item{
+      margin-left: $space--s;
+    }
+  }
+
+  &__item {
+    &--stylized {
+      &-hyphen::before {
+        content: '-';
+      }
+      &-arrow::before {
+        content: '>';
+      }
+
+      &-hyphen::before, &-arrow::before {
+        padding: 0 $space--s;
+      }
+    }
+  }
+
+}

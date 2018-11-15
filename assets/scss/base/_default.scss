@@ -1,0 +1,30 @@
+/**
+ *  Base - _Defaults
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $color-contrast--high;
+  line-height: $font-line-height--main;
+  font-family: $font-family--main;
+  font-size: $font-size--main;
+
+  background: $color-background;
+}
+
+hr {
+  height: 2px;
+
+  border: none;
+
+  background: $color-contrast--low;
+}

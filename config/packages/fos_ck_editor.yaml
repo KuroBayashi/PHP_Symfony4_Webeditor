@@ -1,0 +1,16 @@
+fos_ck_editor:
+    default_config: default
+    configs:
+        default:
+            height: 400
+            toolbar:
+                - ['Maximize', '-', 'ShowBlocks', '-', 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Undo', 'Redo']
+                - [ 'Find', 'Replace', '-', 'Language', 'Scayt' ]
+                - '/'
+                - [ 'CopyFormatting', 'RemoveFormat', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']
+                - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv']
+                - [ 'Link', 'Unlink', 'Anchor' ]
+                - [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ]
+                - '/'
+                - [ 'Styles', 'Format', 'Font', 'FontSize' ]
+                - [ 'TextColor', 'BGColor' ]

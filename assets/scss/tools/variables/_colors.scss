@@ -1,0 +1,27 @@
+/**
+ *  Variables - _Colors
+ */
+
+// Brand
+$color-brand--1: #b0ffb8;
+$color-brand--2: #2f7f5f;
+
+// Contrast
+$color-contrast: #f1f1f1;
+$color-contrast--low: #bfbfbf;
+$color-contrast--medium: #292929;
+$color-contrast--high: #151515;
+
+// Background
+$color-background: $color-contrast;
+
+// Status
+$color-status--info: #4f8dff;
+$color-status--alert: #ff902e;
+$color-status--danger: #ff2e33;
+$color-status--success: #55d037;
+$color-status--disabled: #b5b5b5;
+
+// Interactive
+$color-interactive: #dc436a;
+$color-interactive--darker: darken($color-interactive, 10%);

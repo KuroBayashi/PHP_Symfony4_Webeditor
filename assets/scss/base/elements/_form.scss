@@ -1,0 +1,60 @@
+/**
+ *  Elements - _Form
+ */
+
+.form {
+  margin: $space--s 0;
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: $space--m;
+  }
+
+  &__label {
+    font-size: 1.2em;
+
+    margin-bottom: $space--xs;
+
+    &:not(.required)::after {
+      content: ' - Optionnel';
+
+      color: $color-contrast--low;
+      font-size: 0.8em;
+    }
+  }
+
+  &__field {
+    padding: $space--s $space--m;
+
+    margin-left: $space--s;
+
+    border: 1px solid $color-contrast--low;
+
+    font: inherit;
+
+    background: transparent;
+
+    &--textarea {
+      min-height: 150px;
+
+      resize: vertical;
+    }
+
+    &--ckeditor {
+      margin-left: $space--s;
+    }
+  }
+
+  &__errors {
+    margin: 0 0 1px $space--s;
+
+    color: $color-status--danger;
+    font-weight: 700;
+  }
+
+  .field__delete {
+    margin: $space--s 0 0 $space--s;
+  }
+}

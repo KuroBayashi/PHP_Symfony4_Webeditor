@@ -1,0 +1,19 @@
+{#
+ #  Toolbox
+ #}
+{% set items = [{'link': path('home'), 'icon': 'fa-home'}] %}
+{% if toolbox.back is defined %}
+    {% set items = items|merge([{'link': path('category_show', {'id': toolbox.back}), 'icon': 'fa-arrow-left'}]) %}
+{% endif %}
+
+<nav class="c-toolbox">
+    <ul class="list list--horizontal">
+        {% for item in items %}
+            <li class="list__item">
+                <a href="{{ item.link }}" class="link--no-decoration btn">
+                    <i class="btn__icon fa {{ item.icon }}"></i>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

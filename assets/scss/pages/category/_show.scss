@@ -1,0 +1,29 @@
+/**
+ *  Category - _Show
+ */
+
+.p-category-show {
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $space--m;
+  }
+
+  &__description {
+    padding: $space--m;
+
+    margin: $space--s 0;
+
+    border: 1px solid $color-contrast--high;
+  }
+
+  &__buttons {
+    position: absolute;
+    right: 5%;
+
+    margin-top: $space--s;
+
+    text-align: right;
+  }
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article - Show{% endblock %}
+
+{% block site_title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+    <div class="p-article-show__buttons">
+        <a href="{{ path('article_edit', {'id': article.id}) }}" class="link--no-decoration btn">
+            <i class="fa fa-pen-nib btn__icon"></i>
+            <span class="btn__text">Editer cet article</span>
+        </a>
+    </div>
+
+    <h2>Article</h2>
+    <hr>
+
+    {{ article.content|default('Aucun contenu.')|raw }}
+
+    <hr>
+    <h2>Fichier PDF</h2>
+
+    {% if article.pdf is not empty %}
+        <iframe src="{{ asset('pdf/' ~ article.pdf) }}" class="p-article-show__pdf-viewer"></iframe>
+    {% else %}
+        Aucun fichier PDF.
+    {% endif %}
+{% endblock %}

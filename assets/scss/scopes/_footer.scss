@@ -1,0 +1,16 @@
+/**
+ *  Scopes - _Footer
+ */
+
+.s-footer {
+  padding: $space--s $space--m;
+
+  margin-top: $space--m;
+
+  color: $color-contrast;
+  text-align: center;
+
+  background: $color-brand--2;
+
+  @include box_shadow(1);
+}

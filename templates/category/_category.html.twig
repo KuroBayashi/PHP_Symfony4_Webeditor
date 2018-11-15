@@ -1,0 +1,38 @@
+{#
+ #  Category
+ #}
+
+{% import "category/_categoryTree.html.twig" as ct %}
+
+<div class="c-card">
+    <header class="c-card__header">
+        <h3>
+            <a href="{{ path('category_show', {'id': category.id}) }}" class="link link--no-color">
+                {{ category.title }}
+            </a>
+        </h3>
+    </header>
+
+    <div class="c-card__content">
+        {% if category.articles|length or category.subCategories|length %}
+            {{ ct.categoryTree(category) }}
+        {% else %}
+            Aucun contenu.
+        {% endif %}
+    </div>
+
+    <footer class="c-card__footer">
+        {#<ul>#}
+            {#<li>#}
+                {#<a href="{{ path('category_new', {'id': category.id}) }}" class="link--no-color">#}
+                    {#Ajouter une sous-catégorie#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('article_new', {'id': category.id}) }}" class="link--no-color">#}
+                    {#Ajouter un article#}
+                {#</a>#}
+            {#</li>#}
+        {#</ul>#}
+    </footer>
+</div>

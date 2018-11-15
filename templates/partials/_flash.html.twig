@@ -1,0 +1,20 @@
+{#
+ #  Flash messages
+ #}
+
+{% set icons = {
+    'danger': 'exclamation-circle',
+    'alert': 'exclamation-triangle',
+    'success': 'check-circle',
+    'info': 'info-circle'
+    }
+%}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="c-flash c-flash--{{ label }}">
+            <i class="fa fa-2x fa-{{ icons[label] }} c-flash__icon"></i>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}

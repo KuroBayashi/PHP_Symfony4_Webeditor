@@ -1,0 +1,23 @@
+/**
+ *  Typography - _Title
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family--title;
+  font-weight: $font-weight--title;
+  line-height: $font-line-height--large;
+}
+
+h1, h2, h3 {
+  padding: $space--s 0;
+}
+h4, h5, h6 {
+  padding: $space--xs 0;
+}
+
+h1 {font-size: $font-size--title-1;}
+h2 {font-size: $font-size--title-2;}
+h3 {font-size: $font-size--title-3;}
+h4 {font-size: $font-size--title-4;}
+h5 {font-size: $font-size--title-5;}
+h6 {font-size: $font-size--title-6;}
